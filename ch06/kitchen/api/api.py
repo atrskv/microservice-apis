@@ -123,7 +123,7 @@ def cancel_schedule(schedule_id):
 
 @blueprint.response(status_code=200, schema=ScheduleStatusSchema)
 @blueprint.route("/kitchen/schedules/<schedule_id>/status", methods=["GET"])
-def cancel_schedule(schedule_id):
+def get_schedule_status(schedule_id):
     for schedule in schedules:
         if schedule["id"] == schedule_id:
             validate_schedule(schedule)
